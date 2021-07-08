@@ -21,11 +21,11 @@ namespace ContribuintesFeJ.Entities
         {
             if (NumFuncionarios > 10)
             {
-                RendaAnual * 0.14;
+               return RendaAnual * 0.14;
             }
             else
             {
-                RendaAnual * 0.16;
+               return RendaAnual * 0.16;
             }
         }
     }

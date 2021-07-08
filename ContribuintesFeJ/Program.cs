@@ -23,7 +23,7 @@ namespace ContribuintesFeJ
                 string nome = Console.ReadLine();
                 Console.Write("Renda Anual: ");
                 double rendaAnual = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                if (tipoContribuinte == 'F')
+                if (tipoContribuinte == 'F' || tipoContribuinte == 'f')
                 {
                     Console.Write("Gastos com Saúde: ");
                     double gastoSaude = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
@@ -35,21 +35,20 @@ namespace ContribuintesFeJ
                     int nFuncionarios = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     list.Add(new PessoaJuridica(nome, rendaAnual, nFuncionarios));
                 }
-
-                
-                Console.WriteLine();
-                Console.WriteLine("Taxas de Impostos");
-                double totalImpostos = 0.0;
-                foreach(Contribuintes cont in list)
-                {
-                    double imposto = cont.Imposto();
-                    Console.WriteLine(cont.Nome + ": %" + imposto.ToString("F2", CultureInfo.InvariantCulture));
-                    totalImpostos += imposto;
-                }
-
-                Console.WriteLine();
-                Console.WriteLine("Imposto Total: " + totalImpostos.ToString("F2", CultureInfo.InvariantCulture));
             }
+
+            Console.WriteLine();
+            Console.WriteLine("Taxas de Impostos");
+            double totalImpostos = 0.0;
+            foreach (Contribuintes cont in list)
+            {
+                double imposto = cont.Imposto();
+                Console.WriteLine(cont.Nome + ": $" + imposto.ToString("F2", CultureInfo.InvariantCulture));
+                totalImpostos += imposto;
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Imposto Total: " + totalImpostos.ToString("F2", CultureInfo.InvariantCulture));
 
         }
     }

@@ -19,14 +19,14 @@ namespace ContribuintesFeJ.Entities
 
         public override double Imposto()
         {
-           if (RendaAnual < 20000.0)
+            if (RendaAnual < 20000.0)
             {
-                RendaAnual * 0.15 - GastoSaude * 0.5;
+               return RendaAnual * 0.15 - GastoSaude * 0.5;
 
             }
             else
             {
-                RendaAnual * 0.25 - GastoSaude * 0.5;
+               return RendaAnual * 0.25 - GastoSaude * 0.5;
             }
 
         }
