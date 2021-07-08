@@ -16,5 +16,19 @@ namespace ContribuintesFeJ.Entities
         {
             GastoSaude = gastoSaude;
         }
+
+        public override double Imposto()
+        {
+           if (RendaAnual < 20000.0)
+            {
+                RendaAnual * 0.15 - GastoSaude * 0.5;
+
+            }
+            else
+            {
+                RendaAnual * 0.25 - GastoSaude * 0.5;
+            }
+
+        }
     }
 }

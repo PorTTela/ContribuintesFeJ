@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ContribuintesFeJ.Entities;
 
 namespace ContribuintesFeJ.Entities
 {
-    class Contribuintes
+    abstract class Contribuintes
     {
-        public string Nome { get; protected set; }
+        public string Nome { get;  protected set; }
         public double RendaAnual { get; protected set; }
 
         public Contribuintes()
@@ -18,5 +19,9 @@ namespace ContribuintesFeJ.Entities
             Nome = nome;
             RendaAnual = rendaAnual;
         }
+
+        public abstract double Imposto();
     }
+
 }
+

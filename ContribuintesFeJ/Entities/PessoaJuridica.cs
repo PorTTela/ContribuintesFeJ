@@ -16,5 +16,17 @@ namespace ContribuintesFeJ.Entities
         {
             NumFuncionarios = numFuncionarios;
         }
+
+        public override double Imposto()
+        {
+            if (NumFuncionarios > 10)
+            {
+                RendaAnual * 0.14;
+            }
+            else
+            {
+                RendaAnual * 0.16;
+            }
+        }
     }
 }
